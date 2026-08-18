@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Gap Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="result-container">
+
+    <div class="result-header">
+        <h1>🎯 Skill Gap Analysis</h1>
+        <p>Hello {{ name }}! Here is your career analysis.</p>
+        <h3>Target Career: {{ career }}</h3>
+    </div>
+
+
+    <!-- Readiness -->
+    <div class="readiness-card">
+
+        <h2>Career Readiness</h2>
+
+        <div class="readiness-number">
+            {{ readiness }}%
+        </div>
+
+        <p>
+            This score represents how closely your current
+            skills match the selected career requirements.
+        </p>
+
+    </div>
+
+
+    <!-- Skill Gaps -->
+    <div class="result-card">
+
+        <h2>📊 Your Skill Gaps</h2>
+
+        <div class="skill-row">
+    <div>
+        <strong>🐍 Python</strong>
+        <span>{{ python }}/10 | Gap: {{ python_gap }}</span>
+    </div>
+
+    <div class="progress">
+        <div class="progress-fill python-progress"
+             style="width: {{ python * 10 }}%;">
+        </div>
+    </div>
+</div>
+
+
+        <div class="skill-row">
+    <div>
+        <strong>🗄️ SQL</strong>
+        <span>{{ sql }}/10 | Gap: {{ sql_gap }}</span>
+    </div>
+
+    <div class="progress">
+        <div class="progress-fill"
+             style="width: {{ sql * 10 }}%;">
+        </div>
+    </div>
+</div>
+
+
+        <div class="skill-row">
+    <div>
+        <strong>🧠 DSA</strong>
+        <span>{{ dsa }}/10 | Gap: {{ dsa_gap }}</span>
+    </div>
+
+    <div class="progress">
+        <div class="progress-fill"
+             style="width: {{ dsa * 10 }}%;">
+        </div>
+    </div>
+</div>
+
+
+       <div class="skill-row">
+    <div>
+        <strong>🔵 OOP</strong>
+        <span>{{ oops }}/10 | Gap: {{ oops_gap }}</span>
+    </div>
+
+    <div class="progress">
+        <div class="progress-fill"
+             style="width: {{ oops * 10 }}%;">
+        </div>
+    </div>
+</div>
+
+    </div>
+
+
+    <!-- Recommendations -->
+
+<div class="result-card">
+
+    <h2>📚 What You Should Learn Next</h2>
+
+    {% for recommendation in recommendations %}
+
+        <div class="recommendation">
+            📌 {{ recommendation }}
+        </div>
+
+    {% endfor %}
+
+</div>
+
+
+<!-- AI Personalized Roadmap -->
+<div class="result-card">
+
+    <h2>🤖 Your Personalized Learning Roadmap</h2>
+
+    <div class="roadmap">
+        {{ roadmap }}
+    </div>
+
+</div>
+
+
+<!-- AI Skill Assessment Quiz -->
+<div class="result-card">
+
+    <h2>🧠 AI Skill Assessment</h2>
+
+    <p>
+        Test your knowledge and identify your actual skill level
+        with a career-based assessment.
+    </p>
+
+    <a href="{{ url_for('quiz', career=career) }}">
+        <button type="button">🚀 Start AI Skill Assessment</button>
+    </a>
+
+</div>
+
+
+
+    <!-- Required Skills -->
+    <div class="result-card">
+
+        <h2>📚 Career Requirements</h2>
+
+        <div class="requirements">
+
+            <div>
+                <strong>Python</strong>
+                <p>{{ required_python }}/10</p>
+            </div>
+
+            <div>
+                <strong>SQL</strong>
+                <p>{{ required_sql }}/10</p>
+            </div>
+
+            <div>
+                <strong>DSA</strong>
+                <p>{{ required_dsa }}/10</p>
+            </div>
+
+            <div>
+                <strong>OOP</strong>
+                <p>{{ required_oops }}/10</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <a href="/skills">
+        <button class="primary-btn">
+            Analyze Again
+        </button>
+    </a>
+
+</div>
+
+</body>
+</html>

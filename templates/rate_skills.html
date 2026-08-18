@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Rate Your Skills</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <div class="form-card">
+
+        <h1>🧠 Rate Your Skills</h1>
+
+        <p>
+            Career:
+            <strong>{{ career }}</strong>
+        </p>
+
+        <p class="subtitle">
+            Gemini identified the important technical skills
+            for this career.
+        </p>
+
+        <p>
+            Rate your current skill level from
+            <strong>0 to 10</strong>.
+        </p>
+
+
+        <form action="/rate-skills" method="POST">
+
+
+            {% for skill in skills %}
+
+            <div class="skill-box">
+
+                <label>
+                    🔹 {{ skill.skill_name }}
+                </label>
+
+                <p class="skill-description">
+                    {{ skill.explanation }}
+                </p>
+
+                <p>
+                    Required level:
+                    <strong>{{ skill.required_level }}/10</strong>
+                </p>
+
+                <input
+                    type="number"
+                    name="skill_{{ loop.index0 }}"
+                    min="0"
+                    max="10"
+                    value="0"
+                    required
+                >
+
+            </div>
+
+            {% endfor %}
+
+
+            <button
+                type="submit"
+                class="primary-btn">
+
+                Generate My AI Assessment
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

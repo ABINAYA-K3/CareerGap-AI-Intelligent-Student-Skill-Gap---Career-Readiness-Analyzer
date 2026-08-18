@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Assessment Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        .result-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .score {
+            font-size: 55px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .ai-assessment {
+            margin-top: 30px;
+            padding: 25px;
+            background: #f0f7ff;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .ai-assessment h2 {
+            text-align: center;
+        }
+
+        .assessment-content {
+            line-height: 1.7;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="result-container">
+
+    <h1>🎯 Skill Assessment Result</h1>
+
+    <h2>
+        Career:
+        {{ career }}
+    </h2>
+
+    <div class="score">
+
+        {{ percentage }}%
+
+    </div>
+
+    <p style="text-align:center;">
+
+        You scored
+        <strong>{{ score }}/{{ total_questions }}</strong>
+
+    </p>
+
+
+    <div class="ai-assessment">
+
+        <h2>
+            🤖 AI Skill Assessment Report
+        </h2>
+
+        <div class="assessment-content">
+
+            {{ ai_assessment | safe}}
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

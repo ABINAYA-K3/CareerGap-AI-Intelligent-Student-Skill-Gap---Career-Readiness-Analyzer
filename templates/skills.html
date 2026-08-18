@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Assessment</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <div class="form-card">
+
+        <h1>📊 Skill Assessment</h1>
+
+        <p class="subtitle">
+            Enter your details and target technology role.
+        </p>
+
+        <form action="/generate-skills" method="POST">
+
+            <label>👤 Your Name</label>
+            <input type="text"
+                   name="name"
+                   placeholder="Enter your name"
+                   required>
+
+
+            <label>🎯 Target Career / Job Role</label>
+
+            <input type="text"
+                   name="career"
+                   placeholder="Example: Data Scientist, Cloud Engineer, AI Engineer"
+                   required>
+
+            <p style="font-size: 14px; color: #666;">
+                💡 You can enter any technology role.
+                Gemini AI will identify the important skills required for that role.
+            </p>
+
+
+            <button type="submit" class="primary-btn">
+                🔍 Find Required Skills
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    padding: 40px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.primary-btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+
+
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-card label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-card input,
+.form-card select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.form-card .primary-btn {
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+
+.result-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.result-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.readiness-card {
+    background: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.readiness-number {
+    font-size: 55px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.result-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.skill-row {
+    margin: 25px 0;
+}
+
+.skill-row > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.progress {
+    width: 100%;
+    height: 15px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #4f46e5;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+.requirements {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.requirements div {
+    text-align: center;
+    padding: 20px;
+    background: #f4f7fb;
+    border-radius: 10px;
+}
+
+.result-container .primary-btn {
+    display: block;
+    margin: 30px auto;
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0;
+    }
+
+    .result-container {
+        padding: 20px 15px;
+    }
+
+    .result-card,
+    .readiness-card {
+        padding: 20px;
+    }
+
+    .requirements {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .readiness-number {
+        font-size: 45px;
+    }
+}
+
+.recommendation {
+    background: #f4f7fb;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* Quiz options */
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.quiz-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.quiz-option label {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   AI ASSESSMENT REPORT
+   ============================== */
+
+.ai-report {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 15px;
+    line-height: 1.7;
+    color: #1f2937;
+}
+
+.ai-report h1 {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.ai-report h2 {
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.ai-report h3 {
+    font-size: 21px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #374151;
+}
+
+.ai-report p {
+    margin: 12px 0;
+}
+
+.ai-report strong {
+    font-weight: 700;
+    color: #111827;
+}
+
+.ai-report ul,
+.ai-report ol {
+    padding-left: 25px;
+    margin: 12px 0;
+}
+
+.ai-report li {
+    margin: 8px 0;
+}
+
+.ai-report hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 25px 0;
+}
+
+.ai-report table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.ai-report th,
+.ai-report td {
+    border: 1px solid #e5e7eb;
+    padding: 12px;
+    text-align: left;
+}
+
+.ai-report th {
+    background: #f3f4f6;
+    font-weight: bold;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>AI Skill Assessment Quiz</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <div class="form-card">
+
+        <h1>🧠 AI Skill Assessment</h1>
+
+        <p>
+            Career:
+            <strong>{{ career }}</strong>
+        </p>
+
+        <p class="subtitle">
+            Gemini generated these questions based on your
+            career and skill levels.
+        </p>
+
+        <form action="/quiz" method="POST">
+
+            {% for question in questions %}
+
+<div class="question-card">
+
+    <h3>
+        Question {{ loop.index }}
+    </h3>
+
+    <p>
+        {{ question.question }}
+    </p>
+
+    {% set question_number = loop.index0 %}
+
+    {% for option in question.options %}
+
+    <div class="quiz-option">
+
+        <input
+            type="radio"
+            name="q{{ question_number }}"
+            value="{{ loop.index0 }}"
+            required
+        >
+
+        <label>
+            {{ option }}
+        </label>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endfor %}
+
+            <button
+                type="submit"
+                class="primary-btn">
+
+                Submit Assessment
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
